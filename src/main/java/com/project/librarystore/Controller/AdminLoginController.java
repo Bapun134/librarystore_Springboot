@@ -8,31 +8,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.librarystore.Entities.AdminLogin;
 import com.project.librarystore.Entities.UserLogin;
-import com.project.librarystore.Service.UserLoginService;
+import com.project.librarystore.Service.AdminLoginService;
 
 @RestController
-@RequestMapping("/api/user")
-public class UserLoginController {
+@RequestMapping("/api/admin")
+public class AdminLoginController {
 
 	@Autowired
-	UserLoginService userLoginService;
+	private AdminLoginService adminLoginService;
 	
 	
 	
 	@PostMapping("/signup")
-	String userSignup(@RequestBody UserLogin user) {
-		return userLoginService.signup(user);
+	String adminSignup(@RequestBody AdminLogin admin) {
+		return adminLoginService.signup(admin);
 	}
 	
 	
 	@PostMapping("/login/{email}/{password}")
-	ResponseEntity<String> userLogin(@PathVariable String email,@PathVariable String password) {
+	ResponseEntity<String> adminLogin(@PathVariable String email,@PathVariable String password) {
 		
-		return ResponseEntity.ok(userLoginService.login(email, password));
+		return ResponseEntity.ok(adminLoginService.login(email, password));
 	}
+	
+	
 	
 	
 	
 	
 }
+
+

@@ -6,40 +6,39 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name="UserLogin")
-public class UserLogin {
-	
-	@Id
+@Entity 
+@Table(name="AdminLogin")
+public class AdminLogin {
+	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private String userName;
+	private String adminName;
 	private String email;
 	private String password;
 	
 	
-	public UserLogin(String userName, String email, String password) {
+	public AdminLogin(String adminName, String email, String password) {
 		super();
-		this.userName = userName;
+		this.adminName = adminName;
 		this.email = email;
 		this.password = password;
 	}
 
-	
-	public UserLogin() {
+	public AdminLogin() {
 		
 	}
 
-
-
-	public String getUserName() {
-		return userName;
+	
+	public String getAdminName() {
+		return adminName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
+
 
 	public String getEmail() {
 		return email;
@@ -63,10 +62,10 @@ public class UserLogin {
 
 	@Override
 	public String toString() {
-		return "UserLogin [id=" + id + ", userName=" + userName + ", email=" + email + ", password=" + password + "]";
+		return "AdminLogin [id=" + id + ", adminName=" + adminName + ", email=" + email + ", password=" + password
+				+ "]";
 	}
+	
+	
 
-	
-	
-	
 }

@@ -15,7 +15,6 @@ import jakarta.persistence.Table;
 
 @Entity 
 @Table(name="Customer")
-
 public class Customer {
 	
 	@Id 

@@ -23,11 +23,12 @@ public class UserLoginServiceImpl implements UserLoginService{
 	@Override
 	public String login(String email, String password) {
 		
-		UserLogin user = userLoginRepository.findByEmail(email);
+		UserLogin user = userLoginRepository.findUserByEmail(email);
 		
 		if(user!=null) {
+			
 			if(user.getPassword().equals(password)) {
-				return "Welcome";
+				return "Welcome "+ user.getUserName();
 			}else {
 				return "Password Incorrect";
 			}

@@ -8,6 +8,6 @@ import com.project.librarystore.Entities.UserLogin;
 @Repository
 public interface UserLoginRepository extends JpaRepository<UserLogin,Long> {
 	
-	UserLogin findByEmail(String email);
+	UserLogin findUserByEmail(String email);
 	
 }
