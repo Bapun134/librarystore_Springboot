@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.librarystore.Entities.AdminLogin;
-import com.project.librarystore.Entities.UserLogin;
 import com.project.librarystore.Service.AdminLoginService;
 
 @RestController

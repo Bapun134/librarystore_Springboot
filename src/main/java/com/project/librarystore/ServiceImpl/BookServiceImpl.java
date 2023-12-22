@@ -84,13 +84,12 @@ public class BookServiceImpl implements BookService {
 		List<Cart> cart=customer.getCart();
 		Double sum=0.00;
 		
-		for(Cart i:cart)
-		{
-			Book p=bookRepository.findById(i.getBookId()).get();
+		for(int i=0;i<cart.size();i++)		{
+			Book p=bookRepository.findById(cart.get(i).getBookId()).get();
 		
 			try
 			{
-				if(i.getQty()>p.getStk())
+				if(cart.get(i).getQty()>p.getStk())
 					throw new BookException("Out of stock");
 			}
 			catch(BookException e)
@@ -98,12 +97,12 @@ public class BookServiceImpl implements BookService {
 				return p.getBookName()+" is "+e.getMessage();
 			}
 			
-			i.setTotal(i.getQty()*p.getPrice());
-			i.setOrderno(customer);
+			cart.get(i).setTotal(cart.get(i).getQty()*p.getPrice());
+			cart.get(i).setOrderno(customer);
 		
-			cartRepository.save(i);
-			sum=sum+i.getTotal();  
-			p.setStk(p.getStk()-i.getQty());
+			cartRepository.save(cart.get(i));
+			sum=sum+cart.get(i).getTotal();  
+			p.setStk(p.getStk()-cart.get(i).getQty());
 			bookRepository.save(p);
 		
 		}
