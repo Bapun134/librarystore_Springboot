@@ -13,30 +13,18 @@ public class AdminLogin {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private String adminName;
 	private String email;
 	private String password;
 	
 	
-	public AdminLogin(String adminName, String email, String password) {
+	public AdminLogin(String email, String password) {
 		super();
-		this.adminName = adminName;
 		this.email = email;
 		this.password = password;
 	}
 
 	public AdminLogin() {
 		
-	}
-
-	
-	public String getAdminName() {
-		return adminName;
-	}
-
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
 	}
 
 
@@ -62,7 +50,7 @@ public class AdminLogin {
 
 	@Override
 	public String toString() {
-		return "AdminLogin [id=" + id + ", adminName=" + adminName + ", email=" + email + ", password=" + password
+		return "AdminLogin [id=" + id + ", email=" + email + ", password=" + password
 				+ "]";
 	}
 	

@@ -32,8 +32,7 @@ public class Customer {
 	private List<Cart> cart;
 
 	
-	
-	
+		
 	public Customer(Long orderno, String customerName, Long phone, Double totalPrice, List<Cart> cart) {
 		super();
 		this.orderno = orderno;

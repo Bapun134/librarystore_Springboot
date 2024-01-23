@@ -13,7 +13,6 @@ import com.project.librarystore.Entities.Customer;
 import com.project.librarystore.Repositories.BookRepository;
 import com.project.librarystore.Repositories.CartRepository;
 import com.project.librarystore.Repositories.CustomerRepository;
-import com.project.librarystore.Repositories.StoreRepository;
 import com.project.librarystore.Service.BookService;
 
 @Service
@@ -21,9 +20,6 @@ public class BookServiceImpl implements BookService {
 	
 	@Autowired
 	BookRepository bookRepository;
-	
-	@Autowired
-	StoreRepository storeRepository;
 	
 	@Autowired
 	CartRepository cartRepository;
@@ -106,8 +102,7 @@ public class BookServiceImpl implements BookService {
 			bookRepository.save(p);
 		
 		}
-
-		
+	
 		customer.setTotalPrice(sum);
 		customerRepository.save(customer);
 	

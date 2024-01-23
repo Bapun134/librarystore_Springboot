@@ -13,6 +13,9 @@ public class UserLoginServiceImpl implements UserLoginService{
 	@Autowired
 	UserLoginRepository userLoginRepository;
 	
+	
+	//signup
+	
 	@Override
 	public String signup(UserLogin user) {
 		
@@ -20,6 +23,9 @@ public class UserLoginServiceImpl implements UserLoginService{
 		return "User's Account Created.";
 	}
 
+	
+	//login
+	
 	@Override
 	public String login(String email, String password) {
 		
@@ -28,7 +34,7 @@ public class UserLoginServiceImpl implements UserLoginService{
 		if(user!=null) {
 			
 			if(user.getPassword().equals(password)) {
-				return "Welcome "+ user.getUserName();
+				return "you are welcome";
 			}else {
 				return "Password Incorrect";
 			}

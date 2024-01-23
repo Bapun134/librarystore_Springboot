@@ -26,7 +26,7 @@ public class AdminLoginServiceImpl implements AdminLoginService {
 		if(admin!=null) {
 			
 			if(admin.getPassword().equals(password)) {
-				return "Welcome "+ admin.getAdminName();
+				return "you are welcome";
 			}else {
 				return "Password Incorrect";
 			}

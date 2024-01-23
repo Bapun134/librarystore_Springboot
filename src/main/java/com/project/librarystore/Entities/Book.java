@@ -25,12 +25,6 @@ public class Book {
 	private Long price;
 	
 	
-//	book<------>store
-	@ManyToOne
-    @JoinColumn(name = "store_id") // Name of the foreign key column in Book table
-    @JsonBackReference
-    private Store store;
-	
 	public Book(Long id, String bookName, String authorName, Long stk, Long price) {
 		super();
 		this.Id = id;
